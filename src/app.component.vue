@@ -2,13 +2,15 @@
 <v-app id="app">
   <TopBar />
 
-  <v-container mt-12 pt-6>
+  <v-container my-12 py-6>
     <router-view />
   </v-container>
 
   <v-btn class="mx-2" fab dark fixed bottom right @click="goToTop()">
     <v-icon>expand_less</v-icon>
   </v-btn>
+
+  <Footer />
 </v-app>
 </template>
 

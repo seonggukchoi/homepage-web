@@ -2,11 +2,13 @@ import { Vue, Component } from 'vue-property-decorator';
 import { VuetifyObject } from 'vuetify';
 
 import TopBar from '@/top-bar/top-bar.component';
+import Footer from '@/footer/footer.component';
 import Projects from '@/projects/projects.component';
 
 @Component({
   components: {
     TopBar,
+    Footer,
     Projects,
   },
 })
