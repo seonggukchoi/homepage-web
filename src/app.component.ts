@@ -33,7 +33,7 @@ class Scroller {
     this.vuetify = vuetify;
   }
 
-  public goToTop(): void {
+  public goToTop() {
     this.vuetify.goTo(0);
   }
 }
