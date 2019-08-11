@@ -7,6 +7,10 @@
       </v-flex>
     </v-layout>
   </v-container>
+
+  <v-overlay absolute :z-index="1" :value="isLoading">
+    <v-progress-circular indeterminate size="32"></v-progress-circular>
+  </v-overlay>
 </div>
 </template>
 

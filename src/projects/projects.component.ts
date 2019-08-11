@@ -1,17 +1,32 @@
 import { Vue, Component } from 'vue-property-decorator';
-import Project from './project.component';
+import Project from './project/project.component';
 
 @Component({
   name: 'Projects',
   components: { Project },
 })
 export default class ProjectsComponent extends Vue {
-  private projects = [
-    { id: 1, title: 'Seongg.uk', description: 'Personal Projects', image: '' },
-    { id: 2, title: 'ONDA Plus', description: 'ONDA Projects', image: '' },
-    { id: 3, title: 'ONDA Hotel Extranet', description: 'ONDA Projects', image: '' },
-    { id: 4, title: 'ONDA Wave', description: 'ONDA Projects', image: '' },
-  ];
+  private isLoading: boolean = false;
 
-  private mounted() { }
+  private projects: Projects.Project[] = [];
+
+  private mounted() {
+    return this.fetchProjects();
+  }
+
+  private async fetchProjects() {
+    this.startLoading();
+
+    return this.$store.dispatch('Projects/fetchProjects')
+    .then(() => this.projects = this.$store.getters['Projects/getProjects'])
+    .then(() => this.endLoading());
+  }
+
+  private startLoading() {
+    this.isLoading = true;
+  }
+
+  private endLoading() {
+    this.isLoading = false;
+  }
 }

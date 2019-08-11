@@ -1,5 +1,5 @@
 import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
-import ProjectDetail from './project-detail.component';
+import ProjectDetail from '../project-detail/project-detail.component';
 
 @Component({
   name: 'Project',
@@ -7,7 +7,6 @@ import ProjectDetail from './project-detail.component';
 })
 export default class ProjectsComponent extends Vue {
   @Prop() private readonly project: object | undefined;
-  // @Watch()
 
   private isOpenedProjectDetail: boolean = false;
 

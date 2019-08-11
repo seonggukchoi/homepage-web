@@ -2,8 +2,8 @@
 <div class="project-detail">
   <v-card>
     <v-img
-      lazy-src="../assets/logo.png"
-      src="../assets/logo.png"
+      lazy-src="@/assets/logo.png"
+      src="@/assets/logo.png"
       position="center"
       gradient="to top, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .1) 20%, rgba(0, 0, 0, 0) 100%"
       :transition="false"
