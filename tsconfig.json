@@ -13,7 +13,12 @@
     "baseUrl": ".",
     "types": [
       "webpack-env",
-      "jest"
+      "jest",
+      "vuetify"
+    ],
+    "typeRoots": [
+      "node_modules/@types/",
+      "types/"
     ],
     "paths": {
       "@/*": [
@@ -32,7 +37,8 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "types/**/*.d.ts"
   ],
   "exclude": [
     "node_modules"
