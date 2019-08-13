@@ -1,0 +1,43 @@
+name: Deploy App
+
+on:
+  pull_request:
+    branches:
+    - master
+    - stage
+  schedule:
+  - cron: 0 0 * * *
+  push:
+    branches:
+    - develop
+
+jobs:
+  build:
+    name: Build
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node_version: [10.15.1]
+        os: [ubuntu-latest]
+
+    steps:
+    - name: Checkout to Branch
+      uses: actions/checkout@master
+      with:
+        repository: master
+    
+    - name: Use Node.js ${{ matrix.node_version }}
+      uses: actions/setup-node@v1
+      with:
+        version: ${{ matrix.node_version }}
+        
+    - name: Install NPM Packages
+      run: npm install
+
+  test:
+    name: Test
+    needs: [build]
+
+  deploy:
+    name: Deploy
+    needs: [build, test]
