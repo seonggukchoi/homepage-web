@@ -1,6 +1,6 @@
 <template>
 <div id="footer">
-  <v-footer absolute color="white">
+  <v-footer absolute>
     <v-container grid-list-lg text-center>
       <v-layout wrap>
         <v-flex xs1 offset-xs5>

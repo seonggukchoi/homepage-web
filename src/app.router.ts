@@ -1,8 +1,8 @@
 import { RouteConfig } from 'vue-router';
 
-const appRouter = {
+const appRouter = <RouteConfig>{
   path: '/',
   redirect: '/projects',
-} as RouteConfig;
+};
 
 export default appRouter;

@@ -8,7 +8,7 @@ import Project from './project/project.component';
 export default class ProjectsComponent extends Vue {
   private isLoading: boolean = false;
 
-  private projects: Projects.Project[] = [];
+  private projects: Project.Project[] = [];
 
   private mounted() {
     return this.fetchProjects();

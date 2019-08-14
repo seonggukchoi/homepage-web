@@ -1,46 +1,22 @@
 import { ActionContext } from 'vuex';
+import ProjectsData from './projects.data';
 
 const data = {
-  projects: [
-    {
-      id: 1,
-      title: 'Seongg.uk',
-      description: 'Personal Projects',
-      image: '',
-    },
-    {
-      id: 2,
-      title: 'ONDA Plus',
-      description: 'ONDA Projects',
-      image: '',
-    },
-    {
-      id: 3,
-      title: 'ONDA Hotel Extranet',
-      description: 'ONDA Projects',
-      image: '',
-    },
-    {
-      id: 4,
-      title: 'ONDA Wave',
-      description: 'ONDA Projects',
-      image: '',
-    },
-  ],
+  projects: ProjectsData,
 };
 
-const state = {
+const state = <Project.ProjectsState>{
   projects: [],
-} as Projects.IProjectsState;
+};
 
 const getters = {
-  getProjects(stateContext: Projects.IProjectsState) {
+  getProjects(stateContext: Project.ProjectsState) {
     return stateContext.projects;
   },
 };
 
 const mutations = {
-  setProjects(stateContext: Projects.IProjectsState, projects: Projects.Project[]) {
+  setProjects(stateContext: Project.ProjectsState, projects: Project.Project[]) {
     stateContext.projects = projects;
   },
 };

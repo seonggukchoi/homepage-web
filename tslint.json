@@ -19,6 +19,19 @@
     "arrow-parens": false,
     "no-empty": false,
     "no-console": false,
-    "max-line-length": false
+    "max-line-length": false,
+    "no-angle-bracket-type-assertion": false,
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-module",
+      "check-separator",
+      "check-rest-spread",
+      "check-type",
+      "check-type-operator",
+      "check-preblock"
+    ]
   }
 }

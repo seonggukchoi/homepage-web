@@ -1,9 +1,13 @@
-import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator';
+import StatusChip from '../components/status-chip.component';
 import ProjectDetail from '../project-detail/project-detail.component';
 
 @Component({
   name: 'Project',
-  components: { ProjectDetail },
+  components: {
+    StatusChip,
+    ProjectDetail,
+  },
 })
 export default class ProjectsComponent extends Vue {
   @Prop() private readonly project: object | undefined;
