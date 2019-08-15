@@ -22,12 +22,12 @@ export default <Project.Project[]>[
     ],
     stacks: ['Vue.js', 'TypeScript'],
     images: [],
-    status: 'proceeding',
+    status: 'involved',
   },
   {
     id: 2,
     name: 'ONDA Hotel Extranet',
-    organization: null,
+    organization: 'T Port Inc.',
     description: '',
     from: '2017-11',
     to: '2018-12-14',
@@ -52,7 +52,7 @@ export default <Project.Project[]>[
   {
     id: 3,
     name: 'ONDA Plus',
-    organization: null,
+    organization: 'T Port Inc.',
     description: 'ONDA Pension PMS',
     from: '2018-02-04',
     to: '2018-11',
@@ -77,7 +77,7 @@ export default <Project.Project[]>[
   {
     id: 4,
     name: 'ONDA Wave',
-    organization: null,
+    organization: 'T Port Inc.',
     description: 'ONDA B&B/Guest House PMS',
     from: '2019-01-02',
     to: null,
@@ -97,6 +97,6 @@ export default <Project.Project[]>[
     ],
     stacks: ['Vue.js', 'TypeScript', 'Vuex', 'Node.js', 'Express.js', 'Sequelize.js', 'PostgreSQL'],
     images: [],
-    status: 'proceeding',
+    status: 'involved',
   },
 ];
