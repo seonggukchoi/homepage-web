@@ -1,6 +1,6 @@
 <template>
 <div id="contacts">
-  <v-container grid-list-xs fluid>
+  <v-container grid-list-lg fluid>
     <v-layout wrap row>
       <v-flex xs12>
         <v-text-field label="Email" type="email" clearable />
@@ -14,9 +14,8 @@
     </v-layout>
 
     <v-layout wrap row>
-      <v-spacer />
-      <v-flex xs1>
-        <v-btn dark @click="sendEmail()">Submit</v-btn>
+      <v-flex xs12>
+        <v-btn width="100%" dark large @click="sendEmail()">Submit</v-btn>
       </v-flex>
     </v-layout>
   </v-container>

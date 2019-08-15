@@ -1,6 +1,6 @@
 <template>
 <div id="top-bar">
-  <v-app-bar fixed color="rgba(255, 255, 255, .95)">
+  <v-app-bar app color="rgba(255, 255, 255, .95)">
     <v-toolbar-title>
       <span class="title">Seongg.</span>
       <span>uk</span>

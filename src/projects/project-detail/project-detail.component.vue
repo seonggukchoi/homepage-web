@@ -20,37 +20,39 @@
     </v-card-title>
 
     <v-card-text>
-      <v-container pa-0>
-        <v-row no-gutters class="mt-n2 mb-2">
-          <v-col>
+      <v-container grid-list-xs grid-list-sm grid-list-md grid-list-lg fluid pa-0>
+        <v-layout row wrap class="mt-n4 mb-2">
+          <v-flex>
             <FromTo :from="project.from" :to="project.to" />
-          </v-col>
-        </v-row>
+          </v-flex>
+        </v-layout>
 
-        <v-row>
-          <v-col>{{ project.description }}</v-col>
-        </v-row>
+        <v-layout row wrap mb-6>
+          <v-flex>{{ project.description }}</v-flex>
+        </v-layout>
 
-        <v-row v-if="project.stacks && project.stacks.length > 0">
-          <v-col cols="2" class="pt-4 text-uppercase black--text font-weight-bold">Stacks</v-col>
-          <v-col>
+        <v-layout row wrap v-if="project.stacks && project.stacks.length > 0">
+          <v-flex xs12 sm2 class="text-uppercase black--text font-weight-bold">Stacks</v-flex>
+          <v-flex xs12 sm10>
             <v-chip v-for="stack of project.stacks" :key="`${ project.id }-stack-${ stack }`" class="ml-n1 mr-2 mb-1">
               {{ stack }}
             </v-chip>
-          </v-col>
-        </v-row>
+          </v-flex>
+        </v-layout>
 
-        <v-row dense v-for="(role, index) of project.roles" :key="`${ project.id }-role-${ role.name }`">
-          <v-col cols="2" class="text-uppercase black--text font-weight-bold">
-            <span v-if="index === 0">Roles</span>
-          </v-col>
-          <v-col>
-            <span>{{ role.name }}</span>
-            <span class="mx-2">|</span>
-            <span>{{ role.contribution_percentage }}% Contribution</span>
-            <FromTo :from="role.from" :to="role.to" />
-          </v-col>
-        </v-row>
+        <v-layout row wrap>
+          <v-flex xs12 sm2 class="text-uppercase black--text font-weight-bold">
+            <span>Roles</span>
+          </v-flex>
+          <v-flex xs12 sm10>
+            <div v-for="role of project.roles" :key="`${ project.id }-role-${ role.name }`" class="mb-2">
+              <span>{{ role.name }}</span>
+              <span class="mx-2">|</span>
+              <span>{{ role.contribution_percentage }}% Contribution</span>
+              <FromTo :from="role.from" :to="role.to" />
+            </div>
+          </v-flex>
+        </v-layout>
       </v-container>
     </v-card-text>
 

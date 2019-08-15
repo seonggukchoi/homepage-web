@@ -1,8 +1,8 @@
 <template>
 <div id="projects">
-  <v-container grid-list-lg>
+  <v-container grid-list-lg fluid>
     <v-layout wrap>
-      <v-flex v-for="project in projects" :key="project.id" xs3>
+      <v-flex v-for="project in projects" :key="project.id" xs12 sm6 md4 lg3>
         <Project :project="project" />
       </v-flex>
     </v-layout>
