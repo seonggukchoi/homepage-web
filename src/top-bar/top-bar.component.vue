@@ -8,8 +8,10 @@
 
     <v-spacer />
 
-    <v-btn text to="/projects">Projects</v-btn>
-    <!-- <v-btn text to="/contacts">Contacts</v-btn> -->
+    <v-toolbar-items>
+      <v-btn text to="/projects">Projects</v-btn>
+      <!-- <v-btn text to="/contacts">Contacts</v-btn> -->
+    </v-toolbar-items>
   </v-app-bar>
 </div>
 </template>
