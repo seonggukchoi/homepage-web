@@ -57,7 +57,7 @@
     <v-card-actions>
       <StatusChip :status="project.status" />
       <v-spacer />
-      <v-btn text right @click="closeProjectDetail()">Close</v-btn>
+      <v-btn text @click="closeProjectDetail()">Close</v-btn>
     </v-card-actions>
   </v-card>
 </div>
