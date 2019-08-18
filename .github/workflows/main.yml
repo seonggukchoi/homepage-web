@@ -43,7 +43,7 @@ jobs:
     
     steps:
       - name: Test
-        run: ls -alF; ls -alF ../; ls -alF ../../
+        run: pwd; ls -alF; ls -alF ../; ls -alF ../../
 
       - name: Run Deploy
         uses: actions/aws/cli@master
