@@ -48,4 +48,4 @@ jobs:
       - name: Run Deploy
         uses: actions/aws/cli@master
         with:
-          args: aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }}
+          args: s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }}
