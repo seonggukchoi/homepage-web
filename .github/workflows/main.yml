@@ -42,6 +42,10 @@ jobs:
     needs: [build, test]
     
     steps:
+      - name: Test
+        run: ls -alF
+
       - name: Run Deploy
-        uses: actions/aws
-        run: aws
+        uses: actions/aws/cli@master
+        with:
+          args: aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }}
