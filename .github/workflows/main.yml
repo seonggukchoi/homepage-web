@@ -34,13 +34,25 @@ jobs:
     - name: Run Build
       run: npm run build
 
-    - name: Run Deploy
+    - name: Create AWS Credentials
+      run: |
+        mkdir .aws
+        echo "[default]\naws_access_key_id = $AWS_ACCESS_KEY_ID\naws_secret_access_key = $AWS_SECRET_ACCESS_KEY" > .aws/credentials
+
+    - name: Upload to S3
       uses: actions/aws/cli@master
       with:
-        args: |
-          echo "[default]\naws_access_key_id = $AWS_ACCESS_KEY_ID\naws_secret_access_key = $AWS_SECRET_ACCESS_KEY" > ./.aws/credentials
-          s3 sync dist/ s3://$AWS_S3_BUCKET
+        args: s3 sync dist/ s3://$AWS_S3_BUCKET
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+    - name: Create Invalidation at CloudFront
+      uses: actions/aws/cli@master
+      with:
+        args: cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths /*
+      env:
+        AWS_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
