@@ -35,6 +35,8 @@ jobs:
       run: npm run build
 
     - name: Run Deploy
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
       uses: actions/aws/cli@master
       with:
         args: s3 sync dist/ s3://$AWS_S3_BUCKET
