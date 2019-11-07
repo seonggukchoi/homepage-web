@@ -22,7 +22,7 @@ export default <Project.Project[]>[
     ],
     stacks: ['Vue.js', 'TypeScript'],
     images: [],
-    status: 'involved',
+    status: 'progress',
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ export default <Project.Project[]>[
     ],
     stacks: ['Angular', 'TypeScript', 'Rx.js', 'Apollo', 'Node.js', 'GraphQL', 'Sequelize.js', 'MySQL'],
     images: [],
-    status: 'leave',
+    status: 'left',
   },
   {
     id: 3,
@@ -72,7 +72,7 @@ export default <Project.Project[]>[
     ],
     stacks: ['Angular', 'TypeScript', 'Rx.js', 'Apollo', 'Node.js', 'GraphQL', 'Sequelize.js', 'MySQL'],
     images: [],
-    status: 'leave',
+    status: 'left',
   },
   {
     id: 4,
@@ -97,6 +97,25 @@ export default <Project.Project[]>[
     ],
     stacks: ['Vue.js', 'TypeScript', 'Vuex', 'Node.js', 'Express.js', 'Sequelize.js', 'PostgreSQL'],
     images: [],
-    status: 'involved',
+    status: 'progress',
+  },
+  {
+    id: 4,
+    name: 'Sodam Auth',
+    organization: null,
+    description: 'Integrated authentication server for Project Sodam',
+    from: '2019-10-06',
+    to: null,
+    roles: [
+      {
+        name: 'Back-End Developer',
+        contribution_percentage: 100,
+        from: '2019-10-06',
+        to: null,
+      },
+    ],
+    stacks: ['TypeScript', 'Node.js', 'Nest.js', 'TypeORM', 'PostgreSQL'],
+    images: [],
+    status: 'progress',
   },
 ];

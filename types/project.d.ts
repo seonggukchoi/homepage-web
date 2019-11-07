@@ -1,5 +1,5 @@
 declare namespace Project {
-  type StatusType = 'involved' | 'leave';
+  type StatusType = 'progress' | 'left' | 'pause';
 
   interface Project {
     id: number;
