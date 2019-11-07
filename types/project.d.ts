@@ -3,6 +3,7 @@ declare namespace Project {
 
   interface Project {
     id: number;
+    order: number | null;
     name: string;
     organization: string | null;
     description: string | null;
