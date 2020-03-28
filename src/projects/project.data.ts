@@ -26,7 +26,7 @@ export default <Project.Project[]>[
     status: 'progress',
   },
   {
-    id: 4,
+    id: 2,
     order: 1,
     name: 'Sodam Auth',
     organization: null,
@@ -46,7 +46,7 @@ export default <Project.Project[]>[
     status: 'progress',
   },
   {
-    id: 4,
+    id: 5,
     order: 2,
     name: 'ONDA Wave',
     organization: 'T Port Inc.',
@@ -72,7 +72,7 @@ export default <Project.Project[]>[
     status: 'progress',
   },
   {
-    id: 5,
+    id: 6,
     order: 3,
     name: 'ONDA CMS',
     organization: 'T Port Inc.',
@@ -92,7 +92,7 @@ export default <Project.Project[]>[
     status: 'progress',
   },
   {
-    id: 2,
+    id: 3,
     order: null,
     name: 'ONDA Hotel Extranet',
     organization: 'T Port Inc.',
@@ -118,7 +118,7 @@ export default <Project.Project[]>[
     status: 'left',
   },
   {
-    id: 3,
+    id: 4,
     order: null,
     name: 'ONDA Plus',
     organization: 'T Port Inc.',
