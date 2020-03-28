@@ -1,4 +1,5 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
+import { Project } from '../project.interface';
 import StatusChip from '../components/status-chip.component';
 import ProjectModal from '../project-modal/project-modal.component';
 
@@ -10,7 +11,7 @@ import ProjectModal from '../project-modal/project-modal.component';
   },
 })
 export default class ProjectCardComponent extends Vue {
-  @Prop() private readonly project: Project.Project | undefined;
+  @Prop() private readonly project: Project | undefined;
 
   private isOpenedProjectModal: boolean = false;
 

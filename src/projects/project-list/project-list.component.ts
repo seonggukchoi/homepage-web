@@ -1,4 +1,5 @@
 import { Vue, Component } from 'vue-property-decorator';
+import { Project } from '../project.interface';
 import ProjectCard from '../project-card/project-card.component';
 
 @Component({
@@ -8,7 +9,7 @@ import ProjectCard from '../project-card/project-card.component';
 export default class ProjectListComponent extends Vue {
   private isLoading: boolean = false;
 
-  private get projects(): Project.Project[] {
+  private get projects(): Project[] {
     return this.$store.getters['Projects/getProjects'];
   }
 

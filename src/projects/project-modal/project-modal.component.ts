@@ -13,5 +13,5 @@ export default class ProjectModalComponent extends Vue {
   @Prop() private readonly project: object | undefined;
 
   @Emit('close')
-  private closeProjectDetail() { }
+  private closeProjectModal() { }
 }

@@ -1,4 +1,6 @@
-export default <Project.Project[]>[
+import { Project } from './project.interface';
+
+export default <Project[]>[
   {
     id: 1,
     order: 0,

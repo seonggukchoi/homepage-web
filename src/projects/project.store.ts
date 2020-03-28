@@ -1,24 +1,25 @@
 import { ActionContext } from 'vuex';
+import { Project, ProjectsState } from './project.interface';
 import ProjectsData from './project.data';
 
-const state = <Project.ProjectsState>{
+const state = <ProjectsState>{
   projects: [],
 };
 
 const getters = {
-  getProjects(stateContext: Project.ProjectsState): Project.Project[] {
+  getProjects(stateContext: ProjectsState): Project[] {
     return stateContext.projects;
   },
 };
 
 const mutations = {
-  setProjects(stateContext: Project.ProjectsState, projects: Project.Project[]): void {
+  setProjects(stateContext: ProjectsState, projects: Project[]): void {
     stateContext.projects = projects;
   },
 };
 
 const actions = {
-  async fetchProjects(storeContext: ActionContext<Project.ProjectsState, unknown>): Promise<Project.Project[]> {
+  async fetchProjects(storeContext: ActionContext<ProjectsState, unknown>): Promise<Project[]> {
     // TODO Connect API
     const projects = ProjectsData;
 

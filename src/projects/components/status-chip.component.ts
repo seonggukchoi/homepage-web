@@ -1,10 +1,11 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
+import { StatusType } from '../project.interface';
 
 @Component({
   name: 'StatusChip',
 })
 export default class StatusChipComponent extends Vue {
-  @Prop() private readonly status: Project.StatusType | undefined;
+  @Prop() private readonly status: StatusType | undefined;
 
   private chipText: string | null = null;
   private chipColor: string | null = null;
@@ -16,7 +17,7 @@ export default class StatusChipComponent extends Vue {
     }
   }
 
-  private setChipColor(status: Project.StatusType): void {
+  private setChipColor(status: StatusType): void {
     switch (status) {
       case 'progress':
         this.chipText = 'In Progress';
