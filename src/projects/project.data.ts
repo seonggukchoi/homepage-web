@@ -76,7 +76,7 @@ export default <Project.Project[]>[
     order: 3,
     name: 'ONDA CMS',
     organization: 'T Port Inc.',
-    description: 'ONDA Channel Manager Service integrating with ONDA Products',
+    description: 'ONDA Channel Manager Service integrating with ONDA products',
     from: '2020-02-02',
     to: null,
     roles: [
