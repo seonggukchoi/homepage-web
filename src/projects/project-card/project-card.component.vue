@@ -1,6 +1,7 @@
 <template>
 <div class="project">
   <v-card>
+    <!-- TODO Add image -->
     <!-- <v-img
       lazy-src="@/assets/logo.png"
       src="@/assets/logo.png"
@@ -27,12 +28,12 @@
     :value="isOpenedProjectDetail"
     @click:outside="closeProjectDetail()"
     @keydown.esc="closeProjectDetail()">
-    <ProjectDetail :project="project" @close="closeProjectDetail()" />
+    <ProjectCard :project="project" @close="closeProjectDetail()" />
   </v-dialog>
 </div>
 </template>
 
-<script lang="ts" src="./project.component.ts">
+<script lang="ts" src="./project-card.component.ts">
 </script>
 
 <style lang="scss" scoped>

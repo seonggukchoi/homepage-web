@@ -1,9 +1,9 @@
 <template>
-<div id="projects">
+<div id="project-list">
   <v-container grid-list-lg fluid>
     <v-layout wrap>
       <v-flex v-for="project in projects" :key="project.id" xs12 sm6 md4 lg3>
-        <Project :project="project" />
+        <ProjectCard :project="project" />
       </v-flex>
     </v-layout>
   </v-container>
@@ -14,7 +14,7 @@
 </div>
 </template>
 
-<script lang="ts" src="./projects.component.ts">
+<script lang="ts" src="./project-list.component.ts">
 </script>
 
 <style lang="scss" scoped>

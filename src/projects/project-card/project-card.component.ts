@@ -1,26 +1,24 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import StatusChip from '../components/status-chip.component';
-import ProjectDetail from '../project-detail/project-detail.component';
+import ProjectModal from '../project-modal/project-modal.component';
 
 @Component({
-  name: 'Project',
+  name: 'ProjectCard',
   components: {
     StatusChip,
-    ProjectDetail,
+    ProjectModal,
   },
 })
-export default class ProjectsComponent extends Vue {
-  @Prop() private readonly project: object | undefined;
+export default class ProjectCardComponent extends Vue {
+  @Prop() private readonly project: Project.Project | undefined;
 
   private isOpenedProjectDetail: boolean = false;
 
-  private mounted() { }
-
-  private openProjectDetail() {
+  private openProjectDetail(): void {
     this.isOpenedProjectDetail = true;
   }
 
-  private closeProjectDetail() {
+  private closeProjectDetail(): void {
     this.isOpenedProjectDetail = false;
   }
 }

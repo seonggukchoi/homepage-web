@@ -16,15 +16,16 @@ export default class StatusChipComponent extends Vue {
     }
   }
 
-  private setChipColor(status: Project.StatusType) {
-    if (status === 'progress') {
-      this.chipText = 'In Progress';
-      this.chipColor = 'grey darken-3';
-      this.isDark = true;
-    } else if (status === 'left') {
-      this.chipText = 'Left';
-      this.chipColor = 'grey lighten-3';
-      this.isDark = false;
+  private setChipColor(status: Project.StatusType): void {
+    switch (status) {
+      case 'progress':
+        this.chipText = 'In Progress';
+        this.chipColor = 'grey darken-3';
+        this.isDark = true;
+      case 'left':
+        this.chipText = 'Left';
+        this.chipColor = 'grey lighten-3';
+        this.isDark = false;
     }
   }
 }

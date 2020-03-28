@@ -3,7 +3,7 @@ import FromTo from '../components/from-to.component';
 import StatusChip from '../components/status-chip.component';
 
 @Component({
-  name: 'ProjectDetail',
+  name: 'ProjectModal',
   components: {
     FromTo,
     StatusChip,
@@ -11,8 +11,6 @@ import StatusChip from '../components/status-chip.component';
 })
 export default class ProjectDetailComponent extends Vue {
   @Prop() private readonly project: object | undefined;
-
-  private mounted() { }
 
   @Emit('close')
   private closeProjectDetail() { }

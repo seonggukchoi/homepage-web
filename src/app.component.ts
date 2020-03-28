@@ -3,13 +3,13 @@ import { VuetifyObject } from 'vuetify';
 
 import TopBar from '@/top-bar/top-bar.component';
 import Footer from '@/footer/footer.component';
-import Projects from '@/projects/projects.component';
+import ProjectList from '@/projects/project-list/project-list.component';
 
 @Component({
   components: {
     TopBar,
     Footer,
-    Projects,
+    ProjectList,
   },
 })
 export default class AppComponent extends Vue {

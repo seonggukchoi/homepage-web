@@ -65,7 +65,7 @@
 </div>
 </template>
 
-<script lang="ts" src="./project-detail.component.ts">
+<script lang="ts" src="./project-modal.component.ts">
 </script>
 
 <style lang="scss" scoped>
