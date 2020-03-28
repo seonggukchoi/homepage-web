@@ -9,7 +9,7 @@ import StatusChip from '../components/status-chip.component';
     StatusChip,
   },
 })
-export default class ProjectDetailComponent extends Vue {
+export default class ProjectModalComponent extends Vue {
   @Prop() private readonly project: object | undefined;
 
   @Emit('close')

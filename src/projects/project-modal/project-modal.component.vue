@@ -1,5 +1,5 @@
 <template>
-<div class="project-detail">
+<div class="project-modal">
   <v-card>
     <v-carousel v-if="project.images && project.images.length > 0" height="350px" cycle interval="4s" hide-delimiters>
       <v-carousel-item v-for="(image, index) of project.images" :key="`${ project.id }-image-${ index }`">

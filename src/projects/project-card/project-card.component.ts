@@ -12,13 +12,13 @@ import ProjectModal from '../project-modal/project-modal.component';
 export default class ProjectCardComponent extends Vue {
   @Prop() private readonly project: Project.Project | undefined;
 
-  private isOpenedProjectDetail: boolean = false;
+  private isOpenedProjectModal: boolean = false;
 
-  private openProjectDetail(): void {
-    this.isOpenedProjectDetail = true;
+  private openProjectModal(): void {
+    this.isOpenedProjectModal = true;
   }
 
-  private closeProjectDetail(): void {
-    this.isOpenedProjectDetail = false;
+  private closeProjectModal(): void {
+    this.isOpenedProjectModal = false;
   }
 }

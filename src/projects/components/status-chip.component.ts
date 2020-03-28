@@ -22,10 +22,12 @@ export default class StatusChipComponent extends Vue {
         this.chipText = 'In Progress';
         this.chipColor = 'grey darken-3';
         this.isDark = true;
+        break;
       case 'left':
         this.chipText = 'Left';
         this.chipColor = 'grey lighten-3';
         this.isDark = false;
+        break;
     }
   }
 }

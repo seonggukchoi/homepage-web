@@ -1,5 +1,5 @@
 <template>
-<div class="project">
+<div class="project-card">
   <v-card>
     <!-- TODO Add image -->
     <!-- <v-img
@@ -19,16 +19,16 @@
     <v-card-actions>
       <StatusChip :status="project.status" />
       <v-spacer />
-      <v-btn text right @click="openProjectDetail()">Details</v-btn>
+      <v-btn text right @click="openProjectModal()">Details</v-btn>
     </v-card-actions>
   </v-card>
 
   <v-dialog
     max-width="600px"
-    :value="isOpenedProjectDetail"
-    @click:outside="closeProjectDetail()"
-    @keydown.esc="closeProjectDetail()">
-    <ProjectCard :project="project" @close="closeProjectDetail()" />
+    :value="isOpenedProjectModal"
+    @click:outside="closeProjectModal()"
+    @keydown.esc="closeProjectModal()">
+    <ProjectModal :project="project" @close="closeProjectModal()" />
   </v-dialog>
 </div>
 </template>
