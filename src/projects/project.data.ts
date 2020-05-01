@@ -4,7 +4,7 @@ export default <Project[]>[
   {
     id: 1,
     order: 0,
-    name: 'Seongg.uk',
+    name: 'Homepage',
     organization: null,
     description: 'Published homepage for introducing myself.',
     from: '2019-08-13',
