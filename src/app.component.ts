@@ -1,5 +1,5 @@
 import { Vue, Component } from 'vue-property-decorator';
-import { VuetifyObject } from 'vuetify';
+import { Framework } from 'vuetify';
 
 import TopBar from '@/top-bar/top-bar.component';
 import Footer from '@/footer/footer.component';
@@ -25,9 +25,9 @@ export default class AppComponent extends Vue {
 }
 
 class Scroller {
-  private vuetify: VuetifyObject;
+  private vuetify: Framework;
 
-  constructor(vuetify: VuetifyObject) {
+  constructor(vuetify: Framework) {
     if (!vuetify) {
       throw new Error('Invalid vuetify object');
     }
