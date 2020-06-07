@@ -1,6 +1,7 @@
 import { ActionContext } from 'vuex';
+
+import { HttpClient } from '@/libraries/http-client';
 import { Project, ProjectsState } from './project.interface';
-import ProjectsData from './project.data';
 
 const state = <ProjectsState>{
   projects: [],
@@ -20,8 +21,10 @@ const mutations = {
 
 const actions = {
   async fetchProjects(storeContext: ActionContext<ProjectsState, unknown>): Promise<Project[]> {
-    // TODO Connect API
-    const projects = ProjectsData;
+    const httpClient = new HttpClient();
+
+    const projectsResponse = await httpClient.axios.get('/projects');
+    const projects = projectsResponse.data;
 
     storeContext.commit('setProjects', projects);
 
