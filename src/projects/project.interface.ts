@@ -1,26 +1,38 @@
 export type StatusType = 'progress' | 'left' | 'pause';
 
+export interface IProjectsState {
+  projects: IProject[];
+}
+
 export interface IProject {
   id: number;
   order: number | null;
   name: string;
-  organization: string | null;
   description: string | null;
   from: string | null;
   to: string | null;
-  roles: IProjectRole[];
-  stacks: string[];
-  images: string[];
   status: StatusType;
+  roles: IProjectRole[];
+  organizations: IOrganization[] | null;
+  stacks: IStack[];
+  images: string[];
 }
 
 export interface IProjectRole {
+  id: number;
   name: string;
-  contribution_percentage: number;
+  contributionPercentage: number;
   from: string | null;
   to: string | null;
 }
 
-export interface IProjectsState {
-  projects: IProject[];
+export interface IOrganization {
+  id: number;
+  name: string;
+  url: string | null;
+}
+
+export interface IStack {
+  id: number;
+  name: string;
 }

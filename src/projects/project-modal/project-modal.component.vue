@@ -16,7 +16,12 @@
     <v-card-title>
       <span class="title">{{ project.name }}</span>
       <v-spacer />
-      <span v-if="project.organization" class="subtitle-1 grey--text">@{{ project.organization }}</span>
+      <div v-if="project.organizations && project.organizations.length > 0">
+        <div v-for="organization of project.organizations" :key="organization.id">
+          <a v-if="organization.url" class="ml-2 subtitle-1 grey--text" :href="organization.url" target="_blank">@{{ organization.name }}</a>
+          <span v-else class="ml-2 subtitle-1 grey--text">@{{ organization.name }}</span>
+        </div>
+      </div>
     </v-card-title>
 
     <v-card-text>
@@ -35,7 +40,7 @@
           <v-flex xs12 sm2 class="text-uppercase black--text font-weight-bold">Stacks</v-flex>
           <v-flex xs12 sm10>
             <v-chip v-for="stack of project.stacks" :key="`${ project.id }-stack-${ stack }`" class="ml-n1 mr-2 mb-1">
-              {{ stack }}
+              {{ stack.name }}
             </v-chip>
           </v-flex>
         </v-layout>
@@ -48,7 +53,7 @@
             <div v-for="role of project.roles" :key="`${ project.id }-role-${ role.name }`" class="mb-2">
               <span>{{ role.name }}</span>
               <span class="mx-2">|</span>
-              <span>{{ role.contribution_percentage }}% Contribution</span>
+              <span>{{ role.contributionPercentage }}% Contribution</span>
               <FromTo :from="role.from" :to="role.to" />
             </div>
           </v-flex>
