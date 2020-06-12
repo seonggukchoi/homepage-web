@@ -50,10 +50,11 @@
             <span>Roles</span>
           </v-flex>
           <v-flex xs12 sm10>
-            <div v-for="role of project.roles" :key="`${ project.id }-role-${ role.name }`" class="mb-2">
+            <div v-for="role of project.roles" :key="`${ project.id }-role-${ role.name }`" class="mb-4">
               <span>{{ role.name }}</span>
               <span class="mx-2">|</span>
               <span>{{ role.contributionPercentage }}% Contribution</span>
+              <div class="my-2"></div>
               <FromTo :from="role.from" :to="role.to" />
             </div>
           </v-flex>
