@@ -14,6 +14,6 @@ export default class ProjectCardComponent extends Vue {
   @Prop() private readonly project: IProject | undefined;
 
   private openProjectModal(): void {
-    this.$store.dispatch('Projects/openProjectModal', this.project);
+    this.$store.dispatch('Project/openProjectModal', this.project);
   }
 }

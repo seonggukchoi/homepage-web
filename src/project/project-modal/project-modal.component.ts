@@ -12,14 +12,14 @@ import { IProject } from '../project.interface';
 })
 export default class ProjectModalComponent extends Vue {
   private get isOpenedProjectModal(): boolean {
-    return this.$store.getters['Projects/getIsOpenedProjectModal'];
+    return this.$store.getters['Project/getIsOpenedProjectModal'];
   }
 
   private get project(): IProject | null {
-    return this.$store.getters['Projects/getProject'];
+    return this.$store.getters['Project/getProject'];
   }
 
   private closeProjectModal() {
-    this.$store.dispatch('Projects/closeProjectModal');
+    this.$store.dispatch('Project/closeProjectModal');
   }
 }

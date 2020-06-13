@@ -14,11 +14,11 @@ export default class ProjectListComponent extends Vue {
   private isLoading: boolean = false;
 
   private get isOpenedProjectModal(): boolean {
-    return this.$store.getters['Projects/getIsOpenedProjectModal'];
+    return this.$store.getters['Project/getIsOpenedProjectModal'];
   }
 
   private get projects(): IProject[] {
-    return this.$store.getters['Projects/getProjects'];
+    return this.$store.getters['Project/getProjects'];
   }
 
   private mounted(): void {
@@ -27,7 +27,7 @@ export default class ProjectListComponent extends Vue {
 
   private async fetchProjects(): Promise<void> {
     this.startLoading();
-    await this.$store.dispatch('Projects/fetchProjects');
+    await this.$store.dispatch('Project/fetchProjects');
     this.endLoading();
   }
 
@@ -40,6 +40,6 @@ export default class ProjectListComponent extends Vue {
   }
 
   private closeProjectModal() {
-    this.$store.dispatch('Projects/closeProjectModal');
+    this.$store.dispatch('Project/closeProjectModal');
   }
 }
