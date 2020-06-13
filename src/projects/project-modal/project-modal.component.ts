@@ -1,6 +1,7 @@
-import { Vue, Component, Prop, Emit } from 'vue-property-decorator';
+import { Vue, Component } from 'vue-property-decorator';
 import FromTo from '../components/from-to.component';
 import StatusChip from '../components/status-chip.component';
+import { IProject } from '../project.interface';
 
 @Component({
   name: 'ProjectModal',
@@ -10,8 +11,15 @@ import StatusChip from '../components/status-chip.component';
   },
 })
 export default class ProjectModalComponent extends Vue {
-  @Prop() private readonly project: object | undefined;
+  private get isOpenedProjectModal(): boolean {
+    return this.$store.getters['Projects/getIsOpenedProjectModal'];
+  }
 
-  @Emit('close')
-  private closeProjectModal() { }
+  private get project(): IProject | null {
+    return this.$store.getters['Projects/getProject'];
+  }
+
+  private closeProjectModal() {
+    this.$store.dispatch('Projects/closeProjectModal');
+  }
 }

@@ -2,6 +2,8 @@ export type StatusType = 'progress' | 'left' | 'pause';
 
 export interface IProjectsState {
   projects: IProject[];
+  project: IProject | null;
+  isOpenedProjectModal: boolean;
 }
 
 export interface IProject {

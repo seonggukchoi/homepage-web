@@ -2,11 +2,11 @@
 <v-app id="app">
   <TopBar />
 
-  <v-content>
+  <v-main>
     <v-container>
       <router-view />
     </v-container>
-  </v-content>
+  </v-main>
 
   <Footer />
 

@@ -8,6 +8,14 @@
     </v-layout>
   </v-container>
 
+  <v-dialog
+    max-width="600px"
+    :value="isOpenedProjectModal"
+    @click:outside="closeProjectModal()"
+    @keydown.esc="closeProjectModal()">
+    <ProjectModal />
+  </v-dialog>
+
   <v-overlay absolute :value="isLoading">
     <v-progress-circular indeterminate size="32"></v-progress-circular>
   </v-overlay>

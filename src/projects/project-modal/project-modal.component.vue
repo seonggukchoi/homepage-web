@@ -1,5 +1,5 @@
 <template>
-<div class="project-modal">
+<div v-if="project" class="project-modal">
   <v-card>
     <v-carousel v-if="project.images && project.images.length > 0" height="350px" cycle interval="4s" hide-delimiters>
       <v-carousel-item v-for="(image, index) of project.images" :key="`${ project.id }-image-${ index }`">
@@ -17,7 +17,7 @@
       <span class="title">{{ project.name }}</span>
       <v-spacer />
       <div v-if="project.organizations && project.organizations.length > 0">
-        <div v-for="organization of project.organizations" :key="organization.id">
+        <div v-for="organization of project.organizations" :key="`${ project.id }-organization-${ organization.id }`">
           <a v-if="organization.url" class="ml-2 subtitle-1 grey--text" :href="organization.url" target="_blank">@{{ organization.name }}</a>
           <span v-else class="ml-2 subtitle-1 grey--text">@{{ organization.name }}</span>
         </div>
@@ -39,7 +39,7 @@
         <v-layout row wrap v-if="project.stacks && project.stacks.length > 0">
           <v-flex xs12 sm2 class="text-uppercase black--text font-weight-bold">Stacks</v-flex>
           <v-flex xs12 sm10>
-            <v-chip v-for="stack of project.stacks" :key="`${ project.id }-stack-${ stack }`" class="ml-n1 mr-2 mb-1">
+            <v-chip v-for="stack of project.stacks" :key="`${ project.id }-stack-${ stack.id }`" class="ml-n1 mr-2 mb-1">
               {{ stack.name }}
             </v-chip>
           </v-flex>

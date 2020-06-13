@@ -22,14 +22,6 @@
       <v-btn text right @click="openProjectModal()">Details</v-btn>
     </v-card-actions>
   </v-card>
-
-  <v-dialog
-    max-width="600px"
-    :value="isOpenedProjectModal"
-    @click:outside="closeProjectModal()"
-    @keydown.esc="closeProjectModal()">
-    <ProjectModal :project="project" @close="closeProjectModal()" />
-  </v-dialog>
 </div>
 </template>
 
