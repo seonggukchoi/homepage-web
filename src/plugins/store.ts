@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import TopBar from '@/top-bar/top-bar.store';
-import Projects from '@/projects/project.store';
+import Projects from '@/project/project.store';
 import Contacts from '@/contacts/contacts.store';
 
 Vue.use(Vuex);

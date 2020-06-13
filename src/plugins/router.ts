@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import App from '@/app.router';
-import ProjectRouter from '@/projects/project.router';
+import ProjectRouter from '@/project/project.router';
 import Contacts from '@/contacts/contacts.router';
 
 Vue.use(Router);

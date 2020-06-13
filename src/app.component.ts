@@ -3,7 +3,7 @@ import { Framework } from 'vuetify';
 
 import TopBar from '@/top-bar/top-bar.component';
 import Footer from '@/footer/footer.component';
-import ProjectList from '@/projects/project-list/project-list.component';
+import ProjectList from '@/project/project-list/project-list.component';
 
 @Component({
   components: {
