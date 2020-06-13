@@ -3,7 +3,6 @@ import Vuex from 'vuex';
 
 import TopBar from '@/top-bar/top-bar.store';
 import Project from '@/project/project.store';
-import Contacts from '@/contacts/contacts.store';
 
 Vue.use(Vuex);
 
@@ -20,6 +19,5 @@ export default new Vuex.Store({
   modules: {
     TopBar,
     Project,
-    Contacts,
   },
 });
