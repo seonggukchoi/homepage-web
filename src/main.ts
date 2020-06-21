@@ -1,11 +1,14 @@
 import Vue from 'vue';
-import App from './app.component';
+import { CreateElement, VNode } from 'vue/types/umd';
 
 import 'babel-polyfill';
+
+import './plugins/registerServiceWorker';
 import router from './plugins/router';
 import store from './plugins/store';
 import vuetify from './plugins/vuetify';
-import './plugins/registerServiceWorker';
+
+import AppComponent from './app.component';
 
 Vue.config.productionTip = false;
 
@@ -13,5 +16,5 @@ new Vue({
   router,
   store,
   vuetify,
-  render: h => h(App),
+  render: (renderer: CreateElement): VNode => renderer(AppComponent),
 }).$mount('#app');

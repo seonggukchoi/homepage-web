@@ -1,4 +1,5 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
+
 import { StatusType } from '../project.interface';
 
 @Component({
@@ -11,7 +12,7 @@ export default class StatusChipComponent extends Vue {
   private chipColor: string | null = null;
   private isDark: boolean | null = null;
 
-  private mounted() {
+  private mounted(): void {
     if (this.status) {
       this.setChipColor(this.status);
     }

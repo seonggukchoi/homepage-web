@@ -1,6 +1,6 @@
 <template>
 <v-app id="app">
-  <TopBar />
+  <TopBarComponent />
 
   <v-main>
     <v-container>
@@ -8,7 +8,7 @@
     </v-container>
   </v-main>
 
-  <Footer />
+  <FooterComponent />
 
   <v-btn class="mx-2" fab dark fixed bottom right @click="goToTop()">
     <v-icon>expand_less</v-icon>

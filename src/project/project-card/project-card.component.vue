@@ -1,7 +1,7 @@
 <template>
 <div class="project-card">
   <v-card>
-    <!-- TODO Add image -->
+    <!-- TODO Add image @seonggukchoi -->
     <!-- <v-img
       lazy-src="@/assets/logo.png"
       src="@/assets/logo.png"
@@ -17,7 +17,7 @@
     </v-card-text>
 
     <v-card-actions>
-      <StatusChip :status="project.status" />
+      <StatusChipComponent :status="project.status" />
       <v-spacer />
       <v-btn text right @click="openProjectModal()">Details</v-btn>
     </v-card-actions>

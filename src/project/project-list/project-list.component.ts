@@ -1,17 +1,18 @@
 import { Vue, Component } from 'vue-property-decorator';
+
 import { IProject } from '../project.interface';
-import ProjectCard from '../project-card/project-card.component';
-import ProjectModal from '../project-modal/project-modal.component';
+import ProjectCardComponent from '../project-card/project-card.component';
+import ProjectModalComponent from '../project-modal/project-modal.component';
 
 @Component({
   name: 'ProjectList',
   components: {
-    ProjectCard,
-    ProjectModal,
+    ProjectCardComponent,
+    ProjectModalComponent,
   },
 })
 export default class ProjectListComponent extends Vue {
-  private isLoading: boolean = false;
+  private isLoading = false;
 
   private get isOpenedProjectModal(): boolean {
     return this.$store.getters['Project/getIsOpenedProjectModal'];
@@ -39,7 +40,7 @@ export default class ProjectListComponent extends Vue {
     this.isLoading = false;
   }
 
-  private closeProjectModal() {
+  private closeProjectModal(): void {
     this.$store.dispatch('Project/closeProjectModal');
   }
 }

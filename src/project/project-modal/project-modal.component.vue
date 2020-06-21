@@ -55,7 +55,7 @@
               <span class="mx-2">|</span>
               <span>{{ role.contributionPercentage }}% Contribution</span>
               <div class="my-2"></div>
-              <FromTo :from="role.from" :to="role.to" />
+              <FromToComponent :from="role.from" :to="role.to" />
             </div>
           </v-flex>
         </v-layout>
@@ -63,7 +63,7 @@
     </v-card-text>
 
     <v-card-actions>
-      <StatusChip :status="project.status" />
+      <StatusChipComponent :status="project.status" />
       <v-spacer />
       <v-btn text @click="closeProjectModal()">Close</v-btn>
     </v-card-actions>

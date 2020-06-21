@@ -1,13 +1,12 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
+
 import { IProject } from '../project.interface';
-import StatusChip from '../components/status-chip.component';
-import ProjectModal from '../project-modal/project-modal.component';
+import StatusChipComponent from '../components/status-chip.component';
 
 @Component({
   name: 'ProjectCard',
   components: {
-    StatusChip,
-    ProjectModal,
+    StatusChipComponent,
   },
 })
 export default class ProjectCardComponent extends Vue {

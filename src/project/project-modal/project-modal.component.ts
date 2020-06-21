@@ -1,13 +1,14 @@
 import { Vue, Component } from 'vue-property-decorator';
-import FromTo from '../components/from-to.component';
-import StatusChip from '../components/status-chip.component';
+
 import { IProject } from '../project.interface';
+import FromToComponent from '../components/from-to.component';
+import StatusChipComponent from '../components/status-chip.component';
 
 @Component({
   name: 'ProjectModal',
   components: {
-    FromTo,
-    StatusChip,
+    FromToComponent,
+    StatusChipComponent,
   },
 })
 export default class ProjectModalComponent extends Vue {
@@ -19,7 +20,7 @@ export default class ProjectModalComponent extends Vue {
     return this.$store.getters['Project/getProject'];
   }
 
-  private closeProjectModal() {
+  private closeProjectModal(): void {
     this.$store.dispatch('Project/closeProjectModal');
   }
 }
